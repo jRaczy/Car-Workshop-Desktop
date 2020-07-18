@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{33DAC4BC-328D-402F-BF60-8203FD74F1AA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CarWorkshop</RootNamespace>
+    <AssemblyName>CarWorkshop</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\AddCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddCar.Designer.cs">
+      <DependentUpon>AddCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddClient.Designer.cs">
+      <DependentUpon>AddClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddVisit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddVisit.Designer.cs">
+      <DependentUpon>AddVisit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BasicForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BasicForm.Designer.cs">
+      <DependentUpon>BasicForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditCar.Designer.cs">
+      <DependentUpon>EditCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditClient.Designer.cs">
+      <DependentUpon>EditClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditVisit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditVisit.Designer.cs">
+      <DependentUpon>EditVisit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Email.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Email.Designer.cs">
+      <DependentUpon>Email.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Enums\ModeView.cs" />
+    <Compile Include="Forms\PreviewCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PreviewCar.Designer.cs">
+      <DependentUpon>PreviewCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PreviewClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PreviewClient.Designer.cs">
+      <DependentUpon>PreviewClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PreviewVisit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PreviewVisit.Designer.cs">
+      <DependentUpon>PreviewVisit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medicarDataSet.cs">
+      <DependentUpon>medicarDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="medicarDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>medicarDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AddCar.resx">
+      <DependentUpon>AddCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddClient.resx">
+      <DependentUpon>AddClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddVisit.resx">
+      <DependentUpon>AddVisit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BasicForm.resx">
+      <DependentUpon>BasicForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditCar.resx">
+      <DependentUpon>EditCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditClient.resx">
+      <DependentUpon>EditClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditVisit.resx">
+      <DependentUpon>EditVisit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Email.resx">
+      <DependentUpon>Email.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PreviewCar.resx">
+      <DependentUpon>PreviewCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PreviewClient.resx">
+      <DependentUpon>PreviewClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PreviewVisit.resx">
+      <DependentUpon>PreviewVisit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="medicarDataSet.xsc">
+      <DependentUpon>medicarDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="medicarDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>medicarDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="medicarDataSet.xss">
+      <DependentUpon>medicarDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CarWorkShop.Infrastucture\CarWorkShop.Infrastucture.csproj">
+      <Project>{9a4caebd-99c4-4b05-95af-8d8665b6534d}</Project>
+      <Name>CarWorkShop.Infrastucture</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CarWorkshopDomain\CarWorkshopDomain.csproj">
+      <Project>{149220E9-E53E-4B9F-BE60-82E645BF266A}</Project>
+      <Name>CarWorkshopDomain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
