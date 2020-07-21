@@ -14,13 +14,19 @@ namespace CarWorkshop.Forms
     public partial class PreviewVisit : Form
     {
         public int VisitId { get; set; }
+        /// <summary>
+        /// Konstruktor klasy otwierający formularz
+        /// </summary>
+        /// <param name="visistId"></param>
         public PreviewVisit(int visistId)
         {
             VisitId = visistId;
             InitializeComponent();
             InitVisist();
         }
-        //Metoda zaczytująca wartości z bazy danych i uzupełniająca pola
+        /// <summary>
+        /// Metoda zaczytująca wartości z bazy danych i uzupełniająca pola
+        /// </summary>
         private void InitVisist()
         {
             var repository = new ServiceRepository();

@@ -2,7 +2,10 @@
 using System.ComponentModel;
 
 namespace CarWorkshopDomain.Repositories
-{//Interfejs Dla ClientRepository
+{
+    /// <summary>
+    /// Interfejs Dla ClientRepository
+    /// </summary>
     public interface IClientRepository
     {
         void Add(string address, string email, string name, string phoneNumber, string surname, string comments);

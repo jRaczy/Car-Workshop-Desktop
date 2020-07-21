@@ -16,14 +16,19 @@ namespace CarWorkshop.Forms
     {
         public int VisitId { get; set; }
         public Action<object, EventArgs> RefreshGrid;
-        //Konstruktor
+        /// <summary>
+        /// Konstruktor klasy otwiera formularz
+        /// </summary>
+        /// <param name="visistId"></param>
         public EditVisit(int visistId)
         {
             VisitId = visistId;
             InitializeComponent();
             InitVisist();
         }
-        //Metoda zaczytująca wartości z bazy i uzupełnia wartości pól
+        /// <summary>
+        /// Metoda zaczytująca wartości z bazy i uzupełnia wartości pól
+        /// </summary>
         private void InitVisist()
         {
             var repository = new ServiceRepository();
@@ -36,7 +41,11 @@ namespace CarWorkshop.Forms
             mtbDateTo.Text = visit.DateTo;
             checBoxDone.Checked =visit.IsDone;
         }
-        //Metoda zaczytująca wartości pól i zapisująca je na bazie
+        /// <summary>
+        /// /Metoda zaczytująca wartości pól i zapisująca je na bazie
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {
             CarVisit visit = new CarVisit
@@ -57,7 +66,11 @@ namespace CarWorkshop.Forms
 
             this.Close();
         }
-
+        /// <summary>
+        /// Metoda zamykająca formularz
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();

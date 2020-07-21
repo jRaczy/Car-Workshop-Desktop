@@ -12,17 +12,29 @@ using CarWorkShop.Infrastucture.Repositories;
 
 namespace CarWorkshop.Forms
 {
+    /// <summary>
+    /// Klasa odpowiadająca za stronę logiczną formularza
+    /// </summary>
     public partial class EditCar : Form
     {
+        /// <summary>
+        /// CarId id auta
+        /// </summary>
         public int CarId { get; set; }
         public Action<object, EventArgs> RefreshGrid;
+        /// <summary>
+        /// Konstuktor klasy zapisuje wartość otwiera formularz  
+        /// </summary>
+        /// <param name="carId"></param>
         public EditCar(int carId)
         {
             CarId = carId;
             InitializeComponent();
             InitCars();
         }
-        //Metoda zaczytuje wartości z bazy dla danego obiektu i uzupełnia nimi pola
+        /// <summary>
+        /// Metoda zaczytuje wartości z bazy dla danego obiektu i uzupełnia nimi pola
+        /// </summary>
         private void InitCars()
         {
             var repository = new CarRepository();
@@ -34,7 +46,11 @@ namespace CarWorkshop.Forms
             tbModel.Text = car.Model;
             tbComments.Text = car.Comments;
         }
-        //Event podczas którego zapisywane są wartości z pól i przekazywane do bazy
+        /// <summary>
+        /// Event podczas którego zapisywane są wartości z pól i przekazywane do bazy
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAccept_Click(object sender, EventArgs e)
         {
                 Car car = new Car
@@ -53,16 +69,29 @@ namespace CarWorkshop.Forms
 
                 this.Close();
         }
-
+        /// <summary>
+        /// metoda zamykająca formularz
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-               private void tbVin_KeyPress_1(object sender, KeyPressEventArgs e)
+        /// /// <summary>
+        /// Metoda aby w polu nie było można wpisywać nic innego niż cyfry
+        /// </summary>
+        /// <param name="sender">Przycisk dodający zadanie </param>
+        /// <param name="e"></param>
+        private void tbVin_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar);
         }
-
+        /// /// <summary>
+        /// Metoda aby w polu nie było można wpisywać nic innego niż cyfry
+        /// </summary>
+        /// <param name="sender">Przycisk dodający zadanie </param>
+        /// <param name="e"></param>
         private void tbYearOfProduction_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar);

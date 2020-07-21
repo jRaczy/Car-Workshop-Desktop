@@ -14,13 +14,19 @@ namespace CarWorkshop.Forms
     public partial class PreviewCar : Form
     {
         public int CarId { get; set; }
+        /// <summary>
+        /// Konstruktor klasy otwierający formularz
+        /// </summary>
+        /// <param name="carId"></param>
         public PreviewCar(int carId)
         {
             CarId = carId;
             InitializeComponent();
             InitCar();
         }
-        //Metoda zaczytująca wartości z bazy danych i uzupełniająca pola
+        /// <summary>
+        /// Metoda zaczytująca wartości z bazy danych i uzupełniająca pola
+        /// </summary>
         private void InitCar()
         {
             var cr = new CarRepository();

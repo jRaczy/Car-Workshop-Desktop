@@ -13,16 +13,26 @@ using System.Windows.Forms;
 
 namespace CarWorkshop.Forms
 {
+    /// <summary>
+    /// Klasa odpowiadająca za warstwę logiczną formularza BasicForm
+    /// </summary>
     public partial class BasicForm : Form
     {
         public int clientId;
         public int carId;
         public int visistId;
+        /// <summary>
+        /// Konstruktor klasy otwiera formularz 
+        /// </summary>
         public BasicForm()
         {
             InitializeComponent();
         }
-        //Metoda zaczytująca wartości do DataGridView
+        /// /// <summary>
+        /// Metoda zaczytująca informację do DataGridView
+        /// </summary>
+        /// <param name="sender">Przycisk dodający zadanie </param>
+        /// <param name="e"></param>
         private void BasicForm_Load(object sender, EventArgs e)
         {
             var service = new ServiceRepository().GetAll();
@@ -35,7 +45,11 @@ namespace CarWorkshop.Forms
             this.clientTableAdapter.Fill(this.medicarDataSet.Client);
 
         }
-
+        /// /// <summary>
+        /// Metoda otwierająca formularz dodawania klienta
+        /// </summary>
+        /// <param name="sender">Przycisk dodający zadanie </param>
+        /// <param name="e"></param>
         private void btnAdd_Click(object sender, EventArgs e)
         {
             var addClient = new AddClient();
@@ -43,7 +57,11 @@ namespace CarWorkshop.Forms
             addClient.Show();
             BasicForm_Load(sender, e);
         }
-       
+       /// <summary>
+       /// Metoda odpowiada za wybór przcisku na formularzu w kolumnie i odpowiedniej akcji
+       /// </summary>
+       /// <param name="sender">Przycisk dodający zadanie</param>
+       /// <param name="e">Event na DataGridView</param>
         private void dataGridClients_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridClients.CurrentRow.Index != -1)
@@ -78,7 +96,11 @@ namespace CarWorkshop.Forms
                 }
             }
         }
-      
+        /// <summary>
+        /// Metoda odpowiada za wybór przcisku na formularzu w kolumnie i odpowiedniej akcji
+        /// </summary>
+        /// <param name="sender">Przycisk dodający zadanie</param>
+        /// <param name="e">Event na DataGridView</param>
         private void dataGridCars_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var carId = Convert.ToInt32(dataGridCars.CurrentRow.Cells[0].Value.ToString());
@@ -116,7 +138,11 @@ namespace CarWorkshop.Forms
         {
             BasicForm_Load(sender, e);
         }
-        
+        /// <summary>
+        /// Metoda odpowiada za wybór przcisku na formularzu w kolumnie i odpowiedniej akcji
+        /// </summary>
+        /// <param name="sender">Przycisk dodający zadanie</param>
+        /// <param name="e">Event na DataGridView</param>
         private void dataGridVisits_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var visitId = Convert.ToInt32(dataGridCars.CurrentRow.Cells[0].Value.ToString());

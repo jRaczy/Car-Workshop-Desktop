@@ -12,9 +12,12 @@ using Dapper;
 
 namespace CarWorkShop.Infrastucture.Repositories
 {//Klasa Przechowuje metody dla obiektów Car
-   public class CarRepository : BaseRepository,ICarRepository
+   public class CarRepository : BaseRepository, ICarRepository
     {
-        //Metoda która aktualizuje obiekt na bazie
+        /// <summary>
+        /// Metoda która aktualizuje obiekt na bazie
+        /// </summary>
+        /// <param name="car">Obiekt auta </param>
         public void Edit(Car car)
         {
             try
@@ -34,7 +37,15 @@ namespace CarWorkShop.Infrastucture.Repositories
 
             }
         }
-        //Metoda która służy do dodawania nowego obiektu na bazę
+        /// <summary>
+        /// Metoda która służy do dodawania nowego obiektu na bazę
+        /// </summary>
+        /// <param name="vIN">Vin auta</param>
+        /// <param name="yearOfProduction">Rok produkcji auta</param>
+        /// <param name="brand">Marka auta</param>
+        /// <param name="model">Model auta</param>
+        /// <param name="comments">Komentarze dotyczące auta</param>
+        /// <param name="clientId">Id klienta</param>
         public void Add(int vIN,int yearOfProduction, string brand,string model, string comments, int clientId)
         {
             try
@@ -55,7 +66,10 @@ namespace CarWorkShop.Infrastucture.Repositories
             
             }
         }
-        //Metoda do wyciągnięcia wszystkich obiektów z tabeli Car
+        /// <summary>
+        /// Metoda do wyciągnięcia wszystkich obiektów z tabeli Car
+        /// </summary>
+        /// <returns></returns>
         public List<Car> GetAll()
         {
             using (var connection = new SqlConnection(ConncetionString))
@@ -67,7 +81,11 @@ namespace CarWorkShop.Infrastucture.Repositories
                 return cars;
             }
         }
-        //Metoda do wyszukania obiektu z bazy po ID
+        /// <summary>
+        /// Metoda do wyszukania obiektu z bazy po ID
+        /// </summary>
+        /// <param name="clientId">Id klienta po którym jest wyszukiwane</param>
+        /// <returns></returns>
         public List<Car>  GetByClientId(int clientId)
         {
             using (var connection = new SqlConnection(ConncetionString))
@@ -78,7 +96,11 @@ namespace CarWorkShop.Infrastucture.Repositories
                 return cars.Where(x=>x.ClientID == clientId).ToList();
             }
         }
-        //Metoda do wyszukania obiektu z bazy po ID
+        /// <summary>
+        /// Metoda do wyszukania obiektu z bazy po ID
+        /// </summary>
+        /// <param name="CarId">Id auta po którym jest wyszukiwane</param>
+        /// <returns></returns>
         public List<Car> GetCarById(int CarId)
         {
             using (var connection = new SqlConnection(ConncetionString))
@@ -88,7 +110,10 @@ namespace CarWorkShop.Infrastucture.Repositories
                 return cars;
             }
         }
-        //Metoda do usuwania wizyt po ID
+        /// <summary>
+        /// Metoda do usuwania wizyt po ID
+        /// </summary>
+        /// <param name="id">Id Auta</param>
         public void Delete(int id)
         {
             using (var connection = new SqlConnection(ConncetionString))

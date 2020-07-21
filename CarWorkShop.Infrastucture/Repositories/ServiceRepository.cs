@@ -10,9 +10,22 @@ using CarWorkshopDomain;
 using Dapper;
 
 namespace CarWorkShop.Infrastucture.Repositories
-{//Klasa przechowuje metody dla obiektów Visits
+{
+    /// <summary>
+    /// Klasa przechowuje metody dla obiektów Visits
+    /// </summary>
     public class ServiceRepository: BaseRepository
     {
+        /// <summary>
+        /// Metoda dodaje rekord do bazy dotyczący wizyt
+        /// </summary>
+        /// <param name="dateFrom">Data od kiedy będzie trwała wizyta</param>
+        /// <param name="dateTo">Data do kiedy będzie trwała wizyta</param>
+        /// <param name="service">Nazwa usługi</param>
+        /// <param name="description">Opis usług</param>
+        /// <param name="price">Cena</param>
+        /// <param name="isDone">Wartość bool mówiąca czy zakończona jest już wizyta</param>
+        /// <param name="carId">ID auta</param>
         public void Add(string dateFrom,string dateTo, string service, string description, int price,bool isDone,int carId)
         {
             try
@@ -31,6 +44,11 @@ namespace CarWorkShop.Infrastucture.Repositories
                 throw;
             }
         }
+        /// <summary>
+        /// Metoda zwracająca z bazy wizyte po ID auta
+        /// </summary>
+        /// <param name="carId">ID auta</param>
+        /// <returns></returns>
         public List<CarVisit> GetByCarId(int carId)
         {
             using (var connection = new SqlConnection(ConncetionString))
@@ -41,6 +59,10 @@ namespace CarWorkShop.Infrastucture.Repositories
                 return service.Where(x => x.CarID == carId).ToList();
             }
         }
+        /// <summary>
+        /// Metoda zwracają ca wszystkie wizyty z bazy
+        /// </summary>
+        /// <returns>Zwraca liste wizyt</returns>
         public List<CarVisit> GetAll()
         {
             using (var connection = new SqlConnection(ConncetionString))
@@ -51,6 +73,11 @@ namespace CarWorkShop.Infrastucture.Repositories
                 return visists;
             }
         }
+        /// <summary>
+        /// Metoda wszyukuje i zwraca wizytę po ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public List<CarVisit> GetVistById(int id)
         {
             using (var connection = new SqlConnection(ConncetionString))
@@ -60,6 +87,10 @@ namespace CarWorkShop.Infrastucture.Repositories
                 return visits;
             }
         }
+        /// <summary>
+        /// Metoda edytuje wartości na bazie obiektu CarVisit czyli wizyty
+        /// </summary>
+        /// <param name="visit">Obiekt wizyty w warszatcie</param>
         public void Edit(CarVisit visit)
         {
             try
@@ -79,6 +110,10 @@ namespace CarWorkShop.Infrastucture.Repositories
 
             }
         }
+        /// <summary>
+        /// Metoda usuwa wizyte po jej ID
+        /// </summary>
+        /// <param name="id">ID wizyty</param>
         public void Delete(int id)
         {
             using (var connection = new SqlConnection(ConncetionString))

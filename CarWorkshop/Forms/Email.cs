@@ -12,11 +12,18 @@ using System.Windows.Forms;
 
 namespace CarWorkshop.Forms
 {
+    /// <summary>
+    /// Logiczna część formularza Email
+    /// </summary>
     public partial class Email : Form
     {
         private readonly string email;
 
         public string EmailSender { get; set; }
+        /// <summary>
+        /// Konstruktor klasy inicializuje formularz oraz ustawia wartość pola
+        /// </summary>
+        /// <param name="emailTo"> Parametr zapisywany do propercji email</param>
         public Email(string emailTo)
         {
             email = emailTo;
@@ -24,7 +31,11 @@ namespace CarWorkshop.Forms
             tbTo.Text = email;
            
         }
-
+        /// <summary>
+        /// Metoda zawiera konfigurację SMTP oraz Wysyła wiadomość email po uzupełnieniu pól na formularzu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             try

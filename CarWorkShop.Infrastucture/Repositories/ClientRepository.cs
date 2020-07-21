@@ -10,9 +10,21 @@ using CarWorkshopDomain;
 using Dapper;
 
 namespace CarWorkShop.Infrastucture.Repositories
-{//Klasa przechowuje metody dla obiektów Client
+{
+    /// <summary>
+    /// Klasa przechowuje metody dla obiektów Client
+    /// </summary>
     public class ClientRepository :BaseRepository, IClientRepository
     {
+        /// <summary>
+        /// Metoda dodająca Klienta do bazy danych
+        /// </summary>
+        /// <param name="address">Adres zamieszkania klienta</param>
+        /// <param name="email">Email klienta </param>
+        /// <param name="name">Imię klienta</param>
+        /// <param name="phoneNumber">Numer telefonu klienta </param>
+        /// <param name="surname">Nazwisko klienta</param>
+        /// <param name="comments">Komentarze i dodatkowe informacje o kliencie</param>
         public void Add(string address, string email, string name, string phoneNumber, string surname, string comments)
         {
             try
@@ -32,7 +44,10 @@ namespace CarWorkShop.Infrastucture.Repositories
                 
             }
         }
-
+        /// <summary>
+        /// Metoda która akutalizuje ifnoramcje o kliencie
+        /// </summary>
+        /// <param name="client">Obiekt klienta</param>
         public void Edit(Client client)
         {
             try
@@ -52,7 +67,10 @@ namespace CarWorkShop.Infrastucture.Repositories
               
             }
         }
-
+        /// <summary>
+        /// metoda zwraca wszystkich klientów z bazy
+        /// </summary>
+        /// <returns></returns>
         public List<Client> GetAll()
         {
             using (var connection = new SqlConnection(ConncetionString))
@@ -63,6 +81,11 @@ namespace CarWorkShop.Infrastucture.Repositories
                 return clients;
             }
         }
+        /// <summary>
+        /// Metoda zwraca klienta po jego id
+        /// </summary>
+        /// <param name="clientId">Id klienta</param>
+        /// <returns></returns>
         public List<Client> GetClientsById(int clientId)
         {
             using(var connection = new SqlConnection(ConncetionString))
@@ -72,6 +95,10 @@ namespace CarWorkShop.Infrastucture.Repositories
                 return client;
             }
         }
+        /// <summary>
+        ///  Metoda usuwa klienta z podanym ID
+        /// </summary>
+        /// <param name="clientId">Id klienta</param>
         public void Delete(int clientId)
         {
             using (var connection = new SqlConnection(ConncetionString))

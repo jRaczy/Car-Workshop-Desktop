@@ -17,13 +17,19 @@ namespace CarWorkshop.Forms
     {
         public int ClientId { get; set; }
         public Action<object, EventArgs> RefreshGrid;
+        /// <summary>
+        /// Konstruktor klasy zapisuje wartość 
+        /// </summary>
+        /// <param name="clientId"></param>
         public EditClient(int clientId)
         {
             ClientId = clientId;
             InitializeComponent();
             InitClient();
         }
-        //Metoda pobirająca wartości z bazy danych i uzupełniająca wartości  pól
+        /// <summary>
+        /// Metoda pobirająca wartości z bazy danych i uzupełniająca wartości  pól
+        /// </summary>
         private void InitClient()
         {
             var cr = new ClientRepository();
@@ -36,7 +42,11 @@ namespace CarWorkshop.Forms
             tbEmail.Text = clients.Email;
             tbPhoneNumber.Text = clients.PhoneNumber.ToString();
         }
-        //Metoda która zaczytuje wartości z pól i zapisuje je na bazie
+        /// <summary>
+        /// Metoda która zaczytuje wartości z pól i zapisuje je na bazie
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {
             Client client = new Client
@@ -56,7 +66,11 @@ namespace CarWorkshop.Forms
 
             this.Close();
         }
-
+        /// <summary>
+        /// Metoda zamykająca formularz
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();

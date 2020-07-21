@@ -8,8 +8,10 @@ namespace CarWorkShop.Infrastucture.Repositories
 {
    public abstract class BaseRepository
     {
-        //Klasa która pobiera Connection Stringa z WebConfiga
-        protected  string ConncetionString
+        /// <summary>
+        /// Klasa która pobiera Connection Stringa z WebConfiga
+        /// </summary>
+        protected string ConncetionString
         => System.Configuration.ConfigurationManager.ConnectionStrings["MediCarDB"].ConnectionString;
     }
 }

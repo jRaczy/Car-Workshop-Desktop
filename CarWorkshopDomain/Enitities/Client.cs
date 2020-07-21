@@ -5,7 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CarWorkshopDomain
-{//Klasa odwzorowuje wygląd bazy danych, wymagana do funkcjonowania DAPPERA
+{
+    /// <summary>
+    /// Klasa odwzorowuje wygląd bazy danych, wymagana do funkcjonowania DAPPERA
+    /// </summary>
     public class Client
     {
         public int Id { get; set; }

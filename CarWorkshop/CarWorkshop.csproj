@@ -95,7 +95,6 @@
     <Compile Include="Forms\Email.Designer.cs">
       <DependentUpon>Email.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Enums\ModeView.cs" />
     <Compile Include="Forms\PreviewCar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +113,8 @@
     <Compile Include="Forms\PreviewVisit.Designer.cs">
       <DependentUpon>PreviewVisit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\CarsService.cs" />
+    <Compile Include="Helpers\CarValidator.cs" />
     <Compile Include="medicarDataSet.cs">
       <DependentUpon>medicarDataSet.xsd</DependentUpon>
     </Compile>
@@ -200,6 +201,5 @@
       <Name>CarWorkshopDomain</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

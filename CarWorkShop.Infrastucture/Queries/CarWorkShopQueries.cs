@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace CarWorkShop.Infrastucture.Queries
 {
-    //Klasa przechowuje wszystkie Query które są używane akutalnie
+    /// <summary>
+    /// Klasa przechowuje wszystkie Query które są używane akutalnie
+    /// </summary>
     public static class CarWorkShopQueries
     {
         public static string AddServiceVisit => "INSERT INTO CarVisit(CarID,DateFrom,DateTo,Service,Description,Price,IsDone) Values (@CarID,@DateFrom,@DateTo,@Service,@Description,@Price,@IsDone);";

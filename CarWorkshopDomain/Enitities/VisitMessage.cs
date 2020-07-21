@@ -5,9 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CarWorkshopDomain
-{//Klasa odwzorowuje wygląd bazy danych, wymagana do funkcjonowania DAPPERA
+{
+    /// <summary>
+    /// Klasa odwzorowuje wygląd bazy danych, wymagana do funkcjonowania DAPPERA
+    /// </summary>
     public class VisitMessage
     {
+        
         public int Id { get; set; }
         public string Subject { get; set; }
         public string Description { get; set; }

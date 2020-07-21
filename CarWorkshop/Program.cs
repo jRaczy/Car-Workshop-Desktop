@@ -10,7 +10,7 @@ namespace CarWorkshop
     static class Program
     {
         /// <summary>
-        /// The main entry point for the application.
+        /// Punkt początkowy programu
         /// </summary>
         [STAThread]
         static void Main()
