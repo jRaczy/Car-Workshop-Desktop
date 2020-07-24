@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace CarWorkshop.Forms
 {
     /// <summary>
@@ -29,6 +30,7 @@ namespace CarWorkshop.Forms
             email = emailTo;
             InitializeComponent();
             tbTo.Text = email;
+            tbPassword.UseSystemPasswordChar = true;
            
         }
         /// <summary>

@@ -145,7 +145,7 @@ namespace CarWorkshop.Forms
         /// <param name="e">Event na DataGridView</param>
         private void dataGridVisits_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var visitId = Convert.ToInt32(dataGridCars.CurrentRow.Cells[0].Value.ToString());
+            var visitId = Convert.ToInt32(dataGridVisits.CurrentRow.Cells[0].Value.ToString());
             switch (e.ColumnIndex)
             {
                 case 5:
